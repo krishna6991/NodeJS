@@ -1,0 +1,25 @@
+{
+  "name": "fussball",
+  "version": "1.0.0",
+  "description": "conatins rules of fussball games",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+  },
+  "keywords": [
+    "fuss",
+    "ball",
+    "rule"
+  ],
+  "author": "krishna pandey",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "underscore": "^1.9.1"
+  }
+}
