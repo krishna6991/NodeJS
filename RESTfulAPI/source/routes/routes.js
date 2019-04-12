@@ -1,3 +1,4 @@
+const todoList = require('../controllers/controller');
 const routes = (app) => {
 	app.route('/contact')
 	.get((req,res, next) => {
@@ -5,12 +6,15 @@ const routes = (app) => {
 		console.log(`Request from: ${req.originalUrl}`)
 		console.log(`Request Type: ${req.method}`)
 		next();
-	}, (req, res, next) => {
-		res.send('GET request successful!!!');
-	})
-	.post((rq,res) => {
-		res.send('POST request successful!!');
-	})
+	}, todoList.getContacts)
+	.post((req,res, next) => {
+		//middleware
+		console.log(`Request from: ${req.originalUrl}`)
+		console.log(`Request Type: ${req.method}`)
+		var body = JSON.stringify(req.body);
+		console.log(`Request ${body}`);
+		next();
+	}, todoList.addNewContact);
 
 	app.route('/contact/:contactId')
 	.put((rq,res) =>
